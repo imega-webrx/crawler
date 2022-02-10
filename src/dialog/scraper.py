@@ -15,7 +15,6 @@ class DialogScraper:
         soup = self.get_soup()
         self.get_categories(soup)
 
-
     def get_soup(self, url: Optional[str] = None) -> BS:
         """ send request to url and get html - soup object """
         time.sleep(self.sleeping)
