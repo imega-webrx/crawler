@@ -83,7 +83,7 @@ class DialogScraper:
                 soup = self.get_soup(page)
                 self.products_urls += parse_products_urls(soup)
         return self.products_urls
-    
+
     def scrape_products(self):
         for url in self.products_urls:
             soup = self.get_soup(url)
@@ -92,7 +92,6 @@ class DialogScraper:
             serializer.data
             serializer.save("dialog/products")
         return self.products
-        
 
     def get_pages(self, url, soup):
         """ get pages of required category """

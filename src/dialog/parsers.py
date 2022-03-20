@@ -17,7 +17,7 @@ def parse_products_urls(soup: BeautifulSoup) -> list[str]:
 def parse_product_data(soup: BeautifulSoup, url: str) -> Product:
     """ Parse product url from html page """
     title = soup.find('h1', class_='TFwc').text
-    
+
     try:
         on_prescription = soup.find('b', class_='hWb3').text
         if 'по рецепту' in on_prescription.lower() and 'не' not in on_prescription.lower():
@@ -26,7 +26,7 @@ def parse_product_data(soup: BeautifulSoup, url: str) -> Product:
             on_prescription = False
     except AttributeError:
         on_prescription = False
-    
+
     producer = soup.find('div', class_='Td8J').find('b').text
     price = float(soup.find('span', class_='bfoE fYGe ArC4').text.replace(' ', ''))
     currency = "RUB"
