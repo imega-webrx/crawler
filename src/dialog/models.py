@@ -1,4 +1,4 @@
-from typing import NamedTuple
+from typing import NamedTuple, Optional
 
 
 class Category(NamedTuple):
@@ -12,7 +12,7 @@ class Product(NamedTuple):
     price: float
     currency: str
     on_prescription: bool
-    quantity: int
-    dosage: str
-    shape: str
+    quantity: Optional[str]
+    dosage: Optional[str]
+    shape: Optional[str]
     url: str
