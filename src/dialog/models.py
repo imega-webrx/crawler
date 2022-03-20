@@ -11,4 +11,8 @@ class Product(NamedTuple):
     producer: str
     price: float
     currency: str
+    on_prescription: bool
+    quantity: int
+    dosage: str
+    shape: str
     url: str
