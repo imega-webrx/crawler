@@ -1,6 +1,7 @@
 import sys
 from crawler.scrapers import SCRAPERS
 
+
 def main():
     scraper_name = sys.argv[-1]
     scraper = SCRAPERS[scraper_name]()

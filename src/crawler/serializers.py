@@ -45,7 +45,6 @@ class BaseSerializer(metaclass=BaseModelMeta):
             key, value = field, getattr(self._data, field)
             data.update({key: value})
         return json.dumps(data, indent=4, ensure_ascii=False)
-        
 
     def serialize_to_model(self):
         data: dict = json.loads(self._data)
