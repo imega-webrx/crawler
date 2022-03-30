@@ -20,41 +20,41 @@ def parse_product_data(soup: BeautifulSoup, url: str) -> Product:
     title = soup.find('h1', class_='TFwc').text
 
     try:
-        on_prescription = soup.find('b', class_='hWb3').text
-        if 'по рецепту' in on_prescription.lower() and 'не' not in on_prescription.lower():
-            on_prescription = True
+        is_prescription_drugs = soup.find('b', class_='hWb3').text
+        if 'по рецепту' in is_prescription_drugs.lower() and 'не' not in is_prescription_drugs.lower():
+            is_prescription_drugs = True
         else:
-            on_prescription = False
+            is_prescription_drugs = False
     except AttributeError:
-        on_prescription = False
+        is_prescription_drugs = False
 
-    producer = soup.find('div', class_='Td8J').find('b').text
+    manufacturer = soup.find('div', class_='Td8J').find('b').text
     price = float(soup.find('span', class_='bfoE fYGe ArC4').text.replace(' ', ''))
     currency = "RUB"
-    shape = _get_shape_from_title(title)
+    dosage_forms = _get_dosage_forms_from_title(title)
     dosage, quantity = _get_dosage_and_quantity_from_title(title)
     return Product(
-        title=title, url=url, producer=producer, price=price, on_prescription=on_prescription,
-        currency=currency, shape=shape, dosage=dosage, quantity=quantity
+        title=title, url=url, manufacturer=manufacturer, price=price, is_prescription_drugs=is_prescription_drugs,
+        currency=currency, dosage_forms=dosage_forms, dosage=dosage, quantity=quantity
     )
 
 
-def _get_shape_from_title(title: str):
+def _get_dosage_forms_from_title(title: str):
     """
-    parse shape using regexp
+    parse dosage_forms using regexp
     таблетка, ампула, капсула, мазь, спрей, раствор, порошок, гель
     else - check if `плоды` in title
     """
-    shapes = {"таблетки": "таблетки", "таб.": "таблетки", "таб. жев.": "таблетки",
+    dosage_formss = {"таблетки": "таблетки", "таб.": "таблетки", "таб. жев.": "таблетки",
               "ампул": "ампулы", "амп.": "ампулы", "др.": "", "драже": "драже",
               "капсул": "капсулы", "капс.": "капсулы",
               "мазь": "мазь", "фл.": "флакон",
               "мази": "мазь", "спрей": "спрей", "капли": "капли",
               "раствор": "раствор", "р-р": "раствор",
               "порош": "порошок", "гель": "гель", "плод": "плод"}
-    for key_word in shapes.keys():
+    for key_word in dosage_formss.keys():
         if key_word in title.lower():
-            return shapes[key_word]
+            return dosage_formss[key_word]
 
 
 def _get_dosage_and_quantity_from_title(
