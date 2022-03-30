@@ -8,11 +8,11 @@ class Category(NamedTuple):
 
 class Product(NamedTuple):
     title: str
-    producer: str
+    manufacturer: str
     price: float
     currency: str
-    on_prescription: bool
+    is_prescription_drugs: bool
     quantity: Optional[str]
     dosage: Optional[str]
-    shape: Optional[str]
+    dosage_forms: Optional[str]
     url: str
