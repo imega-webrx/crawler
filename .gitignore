@@ -2,6 +2,5 @@
 __pycache__
 
 **/data/**/*.json
-!**/data/**/products.json
 !**/data/**/product_urls.json
 !**/data/**/categories.json
