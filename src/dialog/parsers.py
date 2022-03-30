@@ -1,4 +1,5 @@
 import re
+from typing import Optional
 
 from bs4 import BeautifulSoup
 
@@ -44,16 +45,21 @@ def _get_shape_from_title(title: str):
     таблетка, ампула, капсула, мазь, спрей, раствор, порошок, гель
     else - check if `плоды` in title
     """
-    shapes = {"таблетки": "таблетки", "ампул": "ампулы",
-              "амп.": "ампулы", "капсул": "капсулы", "мазь": "мазь",
-              "мази": "мазь", "спрей": "спрей", "раствор": "раствор",
+    shapes = {"таблетки": "таблетки", "таб.": "таблетки", "таб. жев.": "таблетки",
+              "ампул": "ампулы", "амп.": "ампулы", "др.": "", "драже": "драже",
+              "капсул": "капсулы", "капс.": "капсулы",
+              "мазь": "мазь", "фл.": "флакон",
+              "мази": "мазь", "спрей": "спрей", "капли": "капли",
+              "раствор": "раствор", "р-р": "раствор",
               "порош": "порошок", "гель": "гель", "плод": "плод"}
     for key_word in shapes.keys():
         if key_word in title.lower():
             return shapes[key_word]
 
 
-def _get_dosage_and_quantity_from_title(title: str):
+def _get_dosage_and_quantity_from_title(
+    title: str
+) -> tuple[Optional[str], Optional[str]]:
     """ >_< """
     dosage, quantity = None, None
 
@@ -67,4 +73,37 @@ def _get_dosage_and_quantity_from_title(title: str):
     if found_text:
         dosage = re.search(pattern_dosage, found_text.group()).group()
         quantity = re.search(pattern_quantity, found_text.group()).group()
+        if quantity in dosage and found_text.group().replace(dosage, '').strip():
+            quantity = found_text.group().replace(dosage, '').strip()
+        dosage, quantity = dosage.strip(), quantity.strip()
+        return dosage, quantity
+    
+    pattern_dosage = r"\d+(\s)?(мкг|мг|мл|г)"
+    pattern_quantity = r"\s(№|N)\d+"
+    pattern_dosage_and_quantity = (
+        pattern_dosage + pattern_quantity
+    )
+    found_text = re.search(pattern_dosage_and_quantity, title)
+    if found_text:
+        dosage = re.search(pattern_dosage, found_text.group()).group()
+        quantity = re.search(pattern_quantity, found_text.group()).group()
+        dosage, quantity = dosage.strip(), quantity.strip()
+        return dosage, quantity
+
+    found_text = re.search(pattern_quantity.removesuffix(r'\s'), title)
+    if found_text:
+        quantity = re.search(pattern_quantity, found_text.group()).group()
+        quantity = quantity.strip()
+        return dosage, quantity
+
+    pattern_quantity = (r"\d+(\s)?(доз|мкг|мг|мл|г)")
+    found_text = re.search(pattern_quantity, title)
+    if found_text:
+        quantity = re.search(pattern_quantity, found_text.group()).group()
+        quantity = quantity.strip()
+    else:
+        quantity = re.search(r"\d+(\s)?(унций)", title)
+        if quantity:
+            quantity = quantity.group()
+            quantity = quantity.strip()
     return dosage, quantity

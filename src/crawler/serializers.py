@@ -18,7 +18,10 @@ class BaseSerializer(metaclass=BaseModelMeta):
     def data(self):
         obj = self._data
         if isinstance(obj, list):
-            obj = obj[0]
+            if obj:
+                obj = obj[0]
+            else:
+                obj = None
 
         if isinstance(obj, self.opts.model):
             data = self.serialize_to_json()

@@ -3,6 +3,7 @@ from crawler.scrapers import SCRAPERS
 
 
 def main():
+    print('log: in main')
     scraper_name = sys.argv[-1]
     scraper = SCRAPERS[scraper_name]()
     scraper.start_scrape()
