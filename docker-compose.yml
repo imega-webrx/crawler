@@ -1,0 +1,12 @@
+version: '3.9'
+
+services:
+  scrapers:
+    image: python:3.9
+    depends_on:
+      - db
+    volumes:
+      - .:/opt/scrapers
+    container_name: scrapers
+    working_dir: /opt/scrapers
+    command: /bin/bash -c 'scripts/run-all.sh'
