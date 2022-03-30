@@ -77,7 +77,7 @@ def _get_dosage_and_quantity_from_title(
             quantity = found_text.group().replace(dosage, '').strip()
         dosage, quantity = dosage.strip(), quantity.strip()
         return dosage, quantity
-    
+
     pattern_dosage = r"\d+(\s)?(мкг|мг|мл|г)"
     pattern_quantity = r"\s(№|N)\d+"
     pattern_dosage_and_quantity = (
