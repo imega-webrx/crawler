@@ -1,0 +1,126 @@
+[
+    {
+        "title": "Аллергия",
+        "path": "/catalog/allergiya/"
+    },
+    {
+        "title": "Боль и спазмы",
+        "path": "/catalog/bol_i_spazmy/"
+    },
+    {
+        "title": "Витамины",
+        "path": "/catalog/vitaminy/"
+    },
+    {
+        "title": "Геморрой",
+        "path": "/catalog/gemorroy/"
+    },
+    {
+        "title": "Гинекология",
+        "path": "/catalog/ginekologiya/"
+    },
+    {
+        "title": "Гомеопатия",
+        "path": "/catalog/gomeopatiya/"
+    },
+    {
+        "title": "Дыхательная система",
+        "path": "/catalog/dykhatelnaya_sistema/"
+    },
+    {
+        "title": "Заболевания глаз",
+        "path": "/catalog/zabolevaniya_glaz/"
+    },
+    {
+        "title": "Заболевания крови",
+        "path": "/catalog/zabolevaniya_krovi/"
+    },
+    {
+        "title": "Кожные заболевания",
+        "path": "/catalog/kozhnye_zabolevaniya/"
+    },
+    {
+        "title": "Контрацепция",
+        "path": "/catalog/kontratseptsiya/"
+    },
+    {
+        "title": "Лекарственные растения",
+        "path": "/catalog/lekarstvennye_rasteniya/"
+    },
+    {
+        "title": "Лечение гормональных нарушений",
+        "path": "/catalog/lechenie_gormonalnykh_narusheniy/"
+    },
+    {
+        "title": "Мочеполовая система",
+        "path": "/catalog/mochepolovaya_sistema/"
+    },
+    {
+        "title": "Мужское здоровье",
+        "path": "/catalog/muzhskoe_zdorove/"
+    },
+    {
+        "title": "Нервная система",
+        "path": "/catalog/nervnaya_sistema/"
+    },
+    {
+        "title": "Опорно-двигательный аппарат",
+        "path": "/catalog/oporno_dvigatelnyy_apparat/"
+    },
+    {
+        "title": "Органы пищеварения и печень",
+        "path": "/catalog/organy_pishchevareniya_i_pechen/"
+    },
+    {
+        "title": "Отвыкание от курения",
+        "path": "/catalog/otvykanie_ot_kureniya/"
+    },
+    {
+        "title": "Похмелье",
+        "path": "/catalog/pokhmele/"
+    },
+    {
+        "title": "Простуда и грипп",
+        "path": "/catalog/prostuda_i_gripp/"
+    },
+    {
+        "title": "Противомикробные препараты",
+        "path": "/catalog/protivomikrobnye_preparaty/"
+    },
+    {
+        "title": "Противоопухолевые препараты и иммуномодуляторы",
+        "path": "/catalog/protivoopukholevye_preparaty_i_immunomodulyatory/"
+    },
+    {
+        "title": "Противопаразитарные",
+        "path": "/catalog/protivoparazitarnye/"
+    },
+    {
+        "title": "Прочее",
+        "path": "/catalog/prochee_3/"
+    },
+    {
+        "title": "Прочие",
+        "path": "/catalog/prochie_4/"
+    },
+    {
+        "title": "Сердце и сосуды",
+        "path": "/catalog/serdtse_i_sosudy/"
+    },
+    {
+        "title": "Средства для похудения",
+        "path": "/catalog/sredstva_dlya_pokhudeniya/"
+    },
+    {
+        "title": "Стоматологические препараты",
+        "path": "/catalog/stomatologicheskie_preparaty/"
+    },
+    {
+        "title": "Укачивание",
+        "path": "/catalog/ukachivanie/"
+    },
+    {
+        "title": "Энтеральное и парентеральное питание",
+        "path": "/catalog/enteralnoe_i_parenteralnoe_pitanie/"
+    }
+]
