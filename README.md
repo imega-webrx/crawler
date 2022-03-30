@@ -14,4 +14,4 @@ python src/manage.py ${SCRAPER_NAME}
 ```
 
 ## Scrapers
-- [ ] [dialog](https://dialog.ru/)
+- [x] [dialog](https://dialog.ru/)
