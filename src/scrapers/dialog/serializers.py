@@ -1,5 +1,5 @@
 from crawler.serializers import BaseSerializer
-from dialog.models import Category, Product
+from scrapers.dialog.models import Category, Product
 
 
 class DialogCategorySerializer(BaseSerializer):

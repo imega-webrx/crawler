@@ -3,7 +3,7 @@ from typing import Optional
 
 from bs4 import BeautifulSoup
 
-from dialog.models import Product
+from scrapers.dialog.models import Product
 
 
 def parse_products_urls(soup: BeautifulSoup) -> list[str]:

@@ -7,10 +7,10 @@ import requests as req
 from crawler.settings import DATA_DIR
 from crawler.utils import save_in_json
 
-from dialog.models import Category
-from dialog.parsers import parse_product_data, parse_products_urls
-from dialog.serializers import DialogCategorySerializer, DialogProductSerializer
-from dialog.utils import get_urls_from_file
+from scrapers.dialog.models import Category
+from scrapers.dialog.parsers import parse_product_data, parse_products_urls
+from scrapers.dialog.serializers import DialogCategorySerializer, DialogProductSerializer
+from scrapers.dialog.utils import get_urls_from_file
 
 
 class DialogScraper:
