@@ -1,6 +1,7 @@
-from dialog.scraper import DialogScraper
+from scrapers import *
 
 
 SCRAPERS = {
     "dialog": DialogScraper,
+    "zdravcity": ZdravcityScraper,
 }
