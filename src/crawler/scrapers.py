@@ -1,7 +1,7 @@
-from scrapers import *                  # NOQA[F403]
+from scrapers import *
 
 
 SCRAPERS = {
-    "dialog": DialogScraper,            # NOQA[F405]
-    "zdravcity": ZdravcityScraper,      # NOQA[F405]
+    "dialog": DialogScraper,
+    "zdravcity": ZdravcityScraper,
 }

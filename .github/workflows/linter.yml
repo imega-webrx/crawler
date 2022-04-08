@@ -1,4 +1,4 @@
-name: CI | linter
+name: ci/linter
 
 on: [push]
 
@@ -24,4 +24,4 @@ jobs:
         python -m pip install flake8
     - name: Lint with flake8
       run: |
-        flake8 src/ --exclude=__pycache__ --max-line-length 120
+        flake8 src/ --exclude=__pycache__ --max-line-length 120 --ignore=F403,F405
