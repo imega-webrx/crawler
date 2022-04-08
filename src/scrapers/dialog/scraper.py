@@ -130,6 +130,6 @@ class DialogScraper:
             return [url]
         return [
             f"{url}page-{page}/"
-            for page in range(pages+1)
+            for page in range(pages + 1)
             if page > 0
         ]
